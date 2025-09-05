@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
 
 class PageController extends Controller
 {
     public function home()
     {
-        $products = Product::latest()->take(3)->get();
+        // Dummy products data
+        $products = [
+            ['name' => 'Product One', 'image' => 'product1.jpg', 'category_id' => 1, 'id' => 1],
+            ['name' => 'Product Two', 'image' => 'product2.jpg', 'category_id' => 1, 'id' => 2],
+            ['name' => 'Product Three', 'image' => 'product3.jpg', 'category_id' => 2, 'id' => 3],
+        ];
+
         return view('home', [
             'subtitle' => 'Welcome To',
             'title' => 'Laxmi And Sons',
@@ -24,12 +29,19 @@ class PageController extends Controller
 
     public function products()
     {
-        $products = Product::with('category')->paginate(9);
+        // Dummy products array for product listing page
+        $products = [
+            ['name' => 'Product One', 'image' => 'product1.jpg', 'id' => 1, 'category_id' => 1],
+            ['name' => 'Product Two', 'image' => 'product2.jpg', 'id' => 2, 'category_id' => 1],
+            ['name' => 'Product Three', 'image' => 'product3.jpg', 'id' => 3, 'category_id' => 2],
+        ];
+
         return view('products.index', compact('products'));
     }
 
     public function showProduct($product)
     {
+        $product = ['name' => 'Product '.$product, 'image' => 'product'.$product.'.jpg', 'id' => $product, 'category_id' => 1];
         return view('products.show', ['product' => $product]);
     }
 
