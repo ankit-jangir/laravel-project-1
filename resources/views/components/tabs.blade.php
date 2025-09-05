@@ -69,7 +69,7 @@
                     </p>
                 </div>
                 <div x-show="activeTab === 'presence'">
-                    <h3 class="text-xl sm:text-2xl font-bold text-green-600 mb-3">Our Global Presence</h3>
+                    <h3 class="text-xl sm:text-2xl font-bold text-green-700 mb-3">Our Global Presence</h3>
                     <p class="text-gray-600 text-sm sm:text-base">
                         From our headquarters and production unit in Ajmer, we have expanded our reach across the nation. With sales offices in Delhi, Raipur, Raigarh, Nagpur, and other prime industrial cities, we are strategically positioned to provide prompt service and support to our valued clients wherever they are.
                     </p>
